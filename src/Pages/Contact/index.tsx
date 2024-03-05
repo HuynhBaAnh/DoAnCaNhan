@@ -6,17 +6,26 @@ import FormSupport from '../../Component/Form-Support'
 
 export default function Contact() {
     return (
-        <div className='bg-gray-200 py-3'>
+        <div className='bg-white py-3'>
             <section>
-
+                <div className="border">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.310736446923!2d108.1578933759218!3d16.049357039
+                        968093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421938d61a3ce5%3A0x29d80f3ebbdcb44a!2zxJDhuqFpIEjhu41jIER1e
+                        SBUw6JuIEjDsmEgS2jDoW5oIE5hbQ!5e0!3m2!1svi!2s!4v1709651423677!5m2!1svi!2s"
+                        width="100%"
+                        height="450"
+                        allowFullScreen
+                        loading="lazy"
+                    ></iframe>
+                </div>
             </section>
 
-            <section className="container mx-auto grid-cols-2 grid gap-3">
-                <div className="col-span-2 md:col-span-1 bg-white  border-slate-500 rounded-md p-3">
-                    <FormSupport />
-                </div>
-                <div className="col-span-2 md:col-span-1 bg-white  border-slate-500 rounded-md p-3">
-                    <Title title="Leave A Comments" fontWeigh='550' size='16pt' />
+            <section className="container mx-auto my-2 grid-cols-2 grid gap-3">
+
+                <div className="col-span-2 md:col-span-1 bg-gray-200  border-slate-500 rounded-md py-4 px-8">
+                    <div className="w-full flex justify-center pb-4">
+                        <Title title="Leave A Comments" fontWeigh='550' size='16pt' />
+                    </div>
                     <div className='flex justify-start'>
                         <p className='w-24'>
                             <Title title='Address:' fontWeigh='400' size='14pt' />
@@ -59,14 +68,15 @@ export default function Contact() {
 
                         </div>
                     </div>
-                    <div className="pt-2">
-                        <iframe
-                            width='100%'
-                            height="auto"
-                            src="https://www.google.com/maps/place/38+Ch%C6%A1n+T%C3%A2m+2,+Ho%C3%A0+Minh,+Li%C3%AAn+Chi%E1%BB%83u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vi%E1%BB%87t+Nam/@16.0639822,108.1564373,17z/data=!3m1!4b1!4m5!3m4!1s0x314219269e4db86b:0x4cdd296b2de82b0!8m2!3d16.0639771!4d108.1590122?entry=ttu"
-                            loading="lazy">
-                        </iframe>
+                    <div className="w-full flex justify-center items-center h-1/2 py-5">
+                        <img src="public/signature.png" alt="" className="w-1/2" />
                     </div>
+                </div>
+                <div className="col-span-2 md:col-span-1 grid justify-center  bg-gray-200 border-slate-500 rounded-md py-4 px-1">
+                    <div className="w-full flex justify-center pb-4">
+                        <Title title="Contact with us" fontWeigh='550' size='16pt' />
+                    </div>
+                    <FormSupport />
                 </div>
             </section>
         </div>

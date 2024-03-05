@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styles from './form.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 
 const form = yup.object({
@@ -31,8 +32,12 @@ export default function FormBooking() {
         resolver: yupResolver(form),
     });
 
+    const navigate = useNavigate();
+
     const onSubmit = (data: typeForm) => {
         console.log(data);
+
+        navigate('/about');
     };
 
     return (

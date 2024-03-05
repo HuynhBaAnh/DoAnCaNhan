@@ -9,7 +9,7 @@ const form = yup.object({
     name: yup.string().required(),
     phone: yup.string().required(),
     mail: yup.string().required(),
-    opinion: yup.string().required(),
+    opinion: yup.string(),
 }).required();
 
 
@@ -17,7 +17,7 @@ interface typeForm {
     name: string;
     phone: string;
     mail: string;
-    opinion: string;
+    opinion?: string;
 }
 
 export default function FormBooking() {
@@ -34,7 +34,7 @@ export default function FormBooking() {
     };
 
     return (
-        <form className="grid grid-cols-2 gap-0.5" onSubmit={handleSubmit(onSubmit)}>
+        <form className="grid grid-cols-2 gap-0.5 w-full" onSubmit={handleSubmit(onSubmit)}>
             <div className="col-span-2 mx-1">
                 <label className={styles.label} htmlFor="name">Your Name:</label>
                 <input type="text" id="name" {...register("name")} className={styles.input} />
@@ -56,8 +56,8 @@ export default function FormBooking() {
                 <textarea className={`${styles.textarea}`} {...register("opinion")} id="opinion" name="message" cols={60} rows={6} ></textarea>
             </div>
 
-            <div className="col-span-2 mx-1">
-                <button type="submit" className={`bg-orange-500 my-3 md:my-6 ${styles.button}`}>Contact</button>
+            <div className="col-span-2 mx-1 w-full flex justify-center">
+                <button type="submit" className={`bg-orange-500 my-3 ${styles.button}`}>Contact</button>
             </div>
         </form >
     );
