@@ -4,6 +4,7 @@ import Layout from './Layout'
 import HomePage from './Pages/PageHome'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
+import Room from './Pages/Rooms'
 
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Layout />}>
             <Route path='/' element={<HomePage />} />
             <Route path='/about' element={<About />} />
+            <Route path='/rooms' element={<Room />} />
             <Route path='/services' element={<About />} />
             <Route path='/food&drink' element={<About />} />
             <Route path='/spa&fitness' element={<About />} />

@@ -37,7 +37,7 @@ export default function FormBooking() {
     const onSubmit = (data: typeForm) => {
         console.log(data);
 
-        navigate('/about');
+        navigate('/rooms');
     };
 
     return (

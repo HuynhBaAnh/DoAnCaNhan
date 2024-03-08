@@ -7,11 +7,12 @@ type Props = {
     fontWeigh?: string;
     color?: string;
     textShadow?: string;
+    letterSpacing?: string;
 }
 
-export default function Title({ title, size, fontFamily, fontWeigh, color, textShadow }: Props) {
+export default function Title({ title, size, fontFamily, fontWeigh, color, textShadow, letterSpacing }: Props) {
     return (
-        <span style={{ fontSize: size, fontFamily: fontFamily, fontWeight: fontWeigh, color: color, textShadow: textShadow }}>
+        <span style={{ fontSize: size, fontFamily: fontFamily, fontWeight: fontWeigh, color: color, textShadow: textShadow, letterSpacing: letterSpacing }}>
             {title}
         </span>
     )
