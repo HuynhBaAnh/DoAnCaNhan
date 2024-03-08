@@ -6,21 +6,33 @@ import styles from './form.module.scss';
 import { useNavigate } from 'react-router-dom';
 
 
-const form = yup.object({
-    adult: yup.number().required(),
-    child: yup.number().required(),
-    checkIn: yup.date().required(),
-    checkOut: yup.date()
-        .required()
-        .min(yup.ref('checkIn')),
+const schema = yup.object({
+    checkIn: yup.object({
+        month: yup.string().required(),
+        day: yup.string().required(),
+    }),
+    checkOut: yup.object({
+        month: yup.string().required(),
+        day: yup.string().required(),
+    }).required(),
+    room: yup.number().required(),
 }).required();
+
+interface CheckIn {
+    month: string;
+    day: string;
+}
+
+interface CheckOut {
+    month: string;
+    day: string;
+}
 
 
 interface typeForm {
-    adult: number;
-    child: number;
-    checkIn: Date;
-    checkOut: Date;
+    checkIn: CheckIn;
+    checkOut: CheckOut;
+    room: number;
 }
 
 export default function FormBooking() {
@@ -29,7 +41,7 @@ export default function FormBooking() {
         handleSubmit,
         formState: { errors },
     } = useForm({
-        resolver: yupResolver(form),
+        resolver: yupResolver(schema),
     });
 
     const navigate = useNavigate();
@@ -44,23 +56,17 @@ export default function FormBooking() {
         <form className="grid grid-cols-8 gap-0.5" onSubmit={handleSubmit(onSubmit)}>
             <div className="col-span-8 md:col-span-2 mx-1">
                 <label className={styles.label} htmlFor="checkIn">Check in</label>
-                <input type="date" id="checkIn" {...register("checkIn")} className={styles.input} />
+                <input type="hidden" id="checkIn" {...register("checkIn.day")} className={styles.input} />
+                <input type="hidden" id="checkIn" {...register("checkIn.month")} className={styles.input} />
+
             </div>
             <div className="col-span-8 md:col-span-2 mx-1 relative">
                 <label className={styles.label} htmlFor="checkOut">Check out</label>
-                <input type="date" id="checkOut" {...register("checkOut")} className={`${styles.input} ${errors.checkOut && styles.error}`} />
+                <input type="hidden" id="checkOut" {...register("checkOut")} className={`${styles.input} ${errors.checkOut && styles.error}`} />
 
             </div>
-            <div className="col-span-8 md:col-span-1 mx-1">
-                <label className={styles.label} htmlFor="Adult">Adult</label>
-                <input type="text" placeholder='Adult' {...register("adult")} id='Adult' className={styles.input} />
-            </div>
-            <div className="col-span-8 md:col-span-1 mx-1">
-                <label className={styles.label} htmlFor="Child">Child</label>
-                <input type="text" placeholder='Child' {...register("child")} id='Child' className={styles.input} />
-            </div>
             <div className="col-span-8 md:col-span-2 mx-1">
-                <button type="submit" className={`bg-orange-500 my-3 md:my-6 ${styles.button}`}>BOOK NOW</button>
+                <button type="submit" className={`bg-black my-3 md:my-6 ${styles.button}`}>Book Now</button>
             </div>
         </form >
     );

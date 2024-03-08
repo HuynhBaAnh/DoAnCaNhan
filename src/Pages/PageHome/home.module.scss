@@ -4,10 +4,9 @@ position: relative;
 
 .form{
     margin-top:10px ;
-    background-color:white;
-    border: 1px solid rgb(48, 48, 48);
+    background-color:rgb(27 27 27 / 80%);
     box-shadow: -5px 5px 5px rgb(107, 106, 106);
-    border-radius: 5px;
+    width: 70%;
 }
 @media (min-width: 767px) {
     .form {

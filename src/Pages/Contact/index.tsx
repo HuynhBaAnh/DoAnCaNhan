@@ -22,7 +22,7 @@ export default function Contact() {
 
             <section className="container mx-auto my-2 grid-cols-2 grid gap-3">
 
-                <div className="col-span-2 md:col-span-1 bg-gray-200 rounded-md py-4 px-8">
+                <div className="col-span-2 md:col-span-1 bg-gray-100 rounded-md py-4 px-8">
                     <div className="w-full flex justify-center pb-4">
                         <Title title="Leave A Comments" fontWeigh='550' size='16pt' />
                     </div>
@@ -72,7 +72,7 @@ export default function Contact() {
                         <img src="public/signature.png" alt="" className="w-1/2" />
                     </div>
                 </div>
-                <div className="col-span-2 md:col-span-1 grid justify-center  bg-gray-200 rounded-md py-4 px-1">
+                <div className="col-span-2 md:col-span-1 grid justify-center  bg-gray-100 rounded-md py-4 px-1">
                     <div className="w-full flex justify-center pb-4">
                         <Title title="Contact with us" fontWeigh='550' size='16pt' />
                     </div>
