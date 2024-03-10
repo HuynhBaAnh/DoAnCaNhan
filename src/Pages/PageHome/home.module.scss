@@ -2,10 +2,31 @@
 position: relative;
 }
 
+.cỉrcle{
+    animation: moveAndRotate 5s infinite;
+}
+@keyframes moveAndRotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-0px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-0px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-0px) rotate(270deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+
 .form{
     margin-top:10px ;
-    background-color:rgb(27 27 27 / 80%);
-    box-shadow: -5px 5px 5px rgb(107, 106, 106);
+    background-color:rgb(27 27 27 / 70%);
     width: 70%;
 }
 @media (min-width: 767px) {
@@ -17,8 +38,4 @@ position: relative;
         left: 50%;
         transform: translate(-50%, -50%);
     }
-}
-
-.content{
-
 }

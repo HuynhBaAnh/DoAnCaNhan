@@ -6,7 +6,7 @@ import FormSupport from '../../Component/Form-Support'
 
 export default function Contact() {
     return (
-        <div className='bg-white py-3'>
+        <div className='py-3'>
             <section>
                 <div className="border">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.310736446923!2d108.1578933759218!3d16.049357039

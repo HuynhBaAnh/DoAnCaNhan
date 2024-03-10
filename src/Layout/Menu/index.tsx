@@ -18,7 +18,7 @@ export default function Menu() {
     };
     return (
         <>
-            <nav className="bg-slate-200" >
+            <nav className="bg-slate-200 p-1/2" >
                 <div className="container mx-auto justify-between grid grid-cols-3 lg:grid-cols-5 xl:grid-cols-3">
                     <div className="grid lg:hidden col-span-1 items-center justify-start pl-5 ">
                         <FaAlignJustify className="w-7 h-7 text-black " onClick={handOnClick} />
