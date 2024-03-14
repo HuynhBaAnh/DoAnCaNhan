@@ -1,28 +1,22 @@
-import React from 'react';
+import React from 'react'
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import styles from './form.module.scss';
-import { useNavigate } from 'react-router-dom';
+import styles from './form.module.scss'
+
 
 const form = yup.object({
-    adult: yup.number().required(),
-    child: yup.number().required(),
-    checkIn: yup.date().required(),
-    checkOut: yup.date()
-        .required()
-        .min(yup.ref('checkIn')),
+    name: yup.string().required(),
+    phone: yup.string().required(),
+    email: yup.string().email().required()
 }).required();
 
 interface typeForm {
-    adult: number;
-    child: number;
-    checkIn: Date;
-    checkOut: Date;
+    name: string;
+    email: string;
+    phone: string;
 }
-
-export default function FormBooking() {
-    const navigate = useNavigate();
+export default function Form() {
     const {
         register,
         handleSubmit,
@@ -33,31 +27,26 @@ export default function FormBooking() {
 
     const onSubmit = (data: typeForm) => {
         console.log(data);
-        navigate('/rooms'); // Chuyển hướng tới trang "/rooms"
     };
-
     return (
-        <form className="grid grid-cols-8 gap-0.5 md:px-14" onSubmit={handleSubmit(onSubmit)}>
-            <div className="col-span-8 md:col-span-2 mx-1 ">
-                <label className={styles.label} htmlFor="checkIn">Check in:</label>
-                <input type="date" id="checkIn" {...register("checkIn")} placeholder='' className={styles.input} />
-            </div>
-            <div className="col-span-8 md:col-span-2 mx-1 relative">
-                <label className={styles.label} htmlFor="checkOut">Check out:</label>
-                <input type="date" id="checkOut" {...register("checkOut")} placeholder='Check out' className={`${styles.input} ${errors.checkOut && styles.error}`} />
-            </div>
-            <div className="col-span-8 md:col-span-1 mx-1">
-                <label className={styles.label} htmlFor="Adult">Adult:</label>
-                <input type="text" placeholder='Adult' {...register("adult")} id='Adult' className={styles.input} />
-            </div>
-            <div className="col-span-8 md:col-span-1 mx-1">
-                <label className={styles.label} htmlFor="Child">Child:</label>
-                <input type="text" placeholder='Child' {...register("child")} id='Child' className={styles.input} />
-            </div>
-            {/* Thêm các trường nhập khác vào đây */}
-            <div className="col-span-8 md:col-span-2 mx-1">
-                <button type="submit" className={`bg-orange-500 my-3 md:my-6 ${styles.button}`}>BOOK NOW</button>
-            </div>
-        </form>
-    );
+        <>
+            <form className="grid grid-cols-6 gap-0.5 md:px-14" onSubmit={handleSubmit(onSubmit)}>
+                <div className="col-span-6 md:col-span-2 mx-1 ">
+                    <label className={styles.label} htmlFor="checkIn">Your Name</label>
+                    <input type="text" id="checkIn" {...register("name")} placeholder='' className={styles.input} />
+                </div>
+                <div className="col-span-6 md:col-span-2 mx-1 relative">
+                    <label className={styles.label} htmlFor="checkOut">Phone</label>
+                    <input type="text" id="checkOut" {...register("phone")} placeholder='Check out' className={`${styles.input} ${errors.phone && styles.error}`} />
+                </div>
+                <div className="col-span-6 md:col-span-2 mx-1">
+                    <label className={styles.label} htmlFor="Adult">Email</label>
+                    <input type="text" placeholder='Adult' {...register("email")} id='Adult' className={styles.input} />
+                </div>
+                <div className="col-span-6 mx-1 w-full flex justify-center">
+                    <button type="submit" className={`bg-orange-500 my-3 md:my-6 ${styles.button}`}>BOOK NOW</button>
+                </div>
+            </form>
+        </>
+    )
 }

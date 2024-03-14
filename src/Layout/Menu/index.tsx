@@ -23,7 +23,7 @@ export default function Menu() {
                     <div className="grid lg:hidden col-span-1 items-center justify-start pl-5 ">
                         <FaAlignJustify className="w-7 h-7 text-black " onClick={handOnClick} />
                     </div>
-                    <div className="flex items-center justify-start col-span-2 ">
+                    <div className="flex items-center justify-start col-span-2 py-2 ">
                         <Link to='/'>
                             <img src="public/logo-dark.png" alt="" />
                         </Link>

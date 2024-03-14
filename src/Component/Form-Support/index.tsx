@@ -20,7 +20,7 @@ interface typeForm {
     opinion?: string;
 }
 
-export default function FormBooking() {
+export default function FormSupport() {
     const {
         register,
         handleSubmit,

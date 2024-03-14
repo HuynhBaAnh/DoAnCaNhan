@@ -1,0 +1,72 @@
+@keyframes icon1 {
+    0% {
+        background-position: 0 0;
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(15px);
+        opacity: 0;
+    }
+    100% {
+        background-position: 0 0;
+        opacity: 0;
+    }
+}
+
+@keyframes icon2 {
+    0% {
+        background-position: 0 0;
+        opacity: 0;
+    }
+    50% {
+        background-position: 0 0;
+        opacity: 1;
+    }
+    75%{
+        transform: translateX(15px);
+        opacity: 0;
+    }
+    100% {
+        background-position: 0 0;
+        opacity: 0;
+    }
+}
+
+.icon1 {
+    animation: icon1 5s infinite; /* Biểu tượng 1: Thực hiện trong 5s, bắt đầu sau 1s */
+}
+
+.icon2 {
+    animation-delay: 5s;
+    animation: icon2 5s 0s  infinite; /* Biểu tượng 2: Thực hiện trong 5s, bắt đầu sau 1s */
+}
+
+.room {
+    position: relative;
+}
+
+.formInfor {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(27, 27, 27, 0.7);
+    width: 70%;
+    padding:25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+.input{
+    width: 100%;
+    padding: 3px 15px;
+}
+
+.button{
+    color: #fff;
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 5px;
+    width: 100%;
+}

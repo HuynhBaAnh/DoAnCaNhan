@@ -11,12 +11,8 @@ import Topic from '../../Component/Content-Topic';
 import Title from '../../Component/Title';
 import Images from '../../Component/Imagess';
 import { product } from './product';
-import Form from '../../Component/Form-Booking';
 import { FaAngleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
-
-
 
 
 
@@ -53,12 +49,6 @@ export default function HomePage() {
                     <SwiperSlide><img src="public/2.avif" alt="" style={{ width: '100%' }} /></SwiperSlide>
                 </Swiper>
 
-                <div className={`w-11/12 lg:w-4/5  mx-auto sm:top-1/2 ${styles.form}`}>
-                    <div className='w-full flex justify-center'>
-                        <Title title='Holly Hotel' size='25pt' fontWeigh='400' color='white' />
-                    </div>
-                    <Form />
-                </div>
             </header>
 
             <div className={`pt-4 `}>
