@@ -6,6 +6,7 @@ import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Room from './Pages/Rooms'
 import Food from './Pages/Food'
+import Login from './Pages/Login/login'
 
 
 
@@ -25,6 +26,7 @@ function App() {
             <Route path='/spa&fitness' element={<About />} />
             <Route path='/contact' element={<Contact />} />
           </Route>
+          <Route path='/user' element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

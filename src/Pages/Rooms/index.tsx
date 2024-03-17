@@ -60,7 +60,7 @@ export default function Room() {
     useEffect(() => {
         const getRooms = async () => {
             try {
-                const response = await fetch('http://localhost:3000/rooms');
+                const response = await fetch('http://localhost:9000/categories');
                 if (!response.ok) {
                     throw new Error('Failed to fetch rooms');
                 }
@@ -86,7 +86,6 @@ export default function Room() {
     const onSubmit = (dataform: typeForm) => {
         sessionStorage.setItem('bookingData', JSON.stringify(dataform));
     };
-    console.log(dataform);
 
     useEffect(() => {
         // Lấy dữ liệu từ localStorage
@@ -103,12 +102,12 @@ export default function Room() {
     }, []);
 
     //Kiểm tra:
-    const [isTest, setIsTest] = useState(false);
-    const Test = () => {
-        rooms.map((id) => {
-            if (id.booking.adults > dataf)
-        })
-    }
+    // const [isTest, setIsTest] = useState(false);
+    // const Test = () => {
+    //     rooms.map((id) => {
+    //         if (id.booking.adults > dataf)
+    //     })
+    // }
 
     return (
         <div className={styles.room}>
@@ -167,9 +166,10 @@ export default function Room() {
                 <div className="container mx-auto ">
                     <div className="grid grid-cols-6 gap-5">
                         {rooms.map((room) => {
-                            if (
-                                
-                            ) {
+                            // if (
+
+                            // ) 
+                            {
                                 return (
                                     <div key={room.id} className="bg-white rounded-2xl p-5 col-span-3 md:col-span-2">
                                         <div className="w-full flex ">

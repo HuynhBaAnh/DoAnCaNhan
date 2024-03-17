@@ -1,6 +1,7 @@
 import React from 'react'
 import { navigationMenu } from '../../Pages/PageHome/navigation';
-import { FaAlignJustify } from 'react-icons/fa';
+import { FaAlignJustify, FaRegUserCircle } from 'react-icons/fa';
+import styles from './menu.module.scss'
 import { Link } from 'react-router-dom';
 
 
@@ -19,17 +20,25 @@ export default function Menu() {
     return (
         <>
             <nav className="bg-slate-200 p-1/2" >
-                <div className="container mx-auto justify-between grid grid-cols-3 lg:grid-cols-5 xl:grid-cols-3">
+                <div className="container mx-auto justify-between grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-6">
+
                     <div className="grid lg:hidden col-span-1 items-center justify-start pl-5 ">
                         <FaAlignJustify className="w-7 h-7 text-black " onClick={handOnClick} />
                     </div>
-                    <div className="flex items-center justify-start col-span-2 py-2 ">
+                    <div className="flex items-center justify-start col-span-2 lg:col-span-3 py-2 ">
                         <Link to='/'>
                             <img src="public/logo-dark.png" alt="" />
                         </Link>
                     </div>
+                    <div className="col-span-1 flex justify-center items-center lg:hidden">
+                        <div className={` ${styles.user}`}>
+                            <Link to="/user">
+                                <FaRegUserCircle className="w-full h-full" />
+                            </Link>
+                        </div>
+                    </div>
 
-                    <ul className={`items-center col-span-3 lg:col-span-3 xl:col-span-1 lg:grid grid-cols-4 ${click ? 'flex-col' : 'hidden'}  `}>
+                    <ul className={` items-center col-span-3 lg:col-span-4 xl:col-span-2 lg:grid grid-cols-4 ${click ? 'flex-col' : 'hidden'}  `}>
                         {navigationMenu.map((item) => (
                             <li key={item.id} className="grid grid-cols-2 lg:flex text-black font-medium text-xl relative py-3 lg:py-8 lg:col-span-1 lg:justify-center lg:border-none border-slate-100 border-solid rounded m-1 ">
                                 <Link to={item.url} className="col-span-1 px-4 lg:px-0.5">
@@ -56,7 +65,12 @@ export default function Menu() {
                             </li>
                         ))}
                     </ul>
-                    <div>
+                    <div className="hidden col-span-1 lg:flex justify-center items-center ">
+                        <div className={`rounded-s-full w-2/12 ${styles.user}`}>
+                            <Link to="/user">
+                                <FaRegUserCircle className="w-full h-full" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </nav>
