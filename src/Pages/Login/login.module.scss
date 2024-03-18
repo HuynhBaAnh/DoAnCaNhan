@@ -1,0 +1,103 @@
+.left {
+    background-image: url('public/admin.jpg');
+    background-size: cover; /* Đảm bảo hình ảnh được phủ toàn bộ kích thước của phần tử */
+    background-position: center; /* Căn hình ảnh vào giữa phần tử */
+    background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+    width: 100%; /* Đảm bảo rằng phần tử có chiều rộng 100% */
+    height: 80vh; /* Đặt chiều cao cho phần tử bằng chiều cao của màn hình */
+}
+
+
+.input{
+    width: 100%;
+    height: 52px ;
+    padding: 14px 16px ;
+    margin: 15px 0px;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 5px;
+}
+
+
+input:focus {
+    outline: none; 
+    border: none;  
+}
+
+.submit{
+  width: 100%;
+  font-weight: 600;
+  color: white;
+  padding: 20px;
+}
+
+.button{
+    padding: 14px 16px ;
+    border-radius: 5px;
+    height: 52px ;
+    width: 100%;
+    margin: 20px 0px;
+    font-weight: 600;
+    color: white;
+}
+
+.error{
+    width: 100%;
+    height: 30px ;
+    padding-left: 5px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.form{
+    background-color: rgb(226 232 240 );
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 35px 25px 15px 20px;
+    width: 360px;
+    height: 396px;
+    box-shadow: -5px 5px 5px rgba(78, 77, 77, 0.5) ;
+}
+
+.cỉrcle{
+    animation: moveAndRotate 5s infinite;
+}
+@keyframes moveAndRotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-0px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-0px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-0px) rotate(270deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+    
+}
+
+.uncỉrcle{
+    animation: moveUnAndRotate 5s infinite;
+}
+
+@keyframes moveUnAndRotate {
+    0% {
+        transform: translateY(0) rotate(360deg); /* Phải */
+    }
+    25% {
+        transform: translateY(-0px) rotate(270deg);
+    }
+    50% {
+        transform: translateY(-0px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-0px) rotate(90deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg); /* Trái */
+    }
+}
